@@ -1,5 +1,19 @@
 export default function Stats() {
 	return (
-		<div className='stats'></div>
+		<section className='stats'>
+			<Stat number='0' title='Charasters'/>
+			<Stat number='0' title='Words' />
+			<Stat number='280' title='Instagram' />
+			<Stat number='2200' title='Facebook' />
+		</section>
+	)
+}
+
+function Stat({number, title}) {
+	return (
+		<section className='stat'>
+			<span className='stat__number'>{number}</span>
+			<h2 className='second-heading'>{title}</h2>
+		</section>
 	)
 }

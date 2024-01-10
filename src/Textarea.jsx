@@ -1,10 +1,12 @@
 import { useState } from 'react'
 import Warning from './Warning'
 
-export default function Textarea() {
-	const [text, setText] = useState('')
+export default function Textarea({text, setText, numberOfCharasters}) {
+	
 	const [warningText, setWarningText ] = useState('')
 
+	// eslint-disable-next-line no-unused-vars
+	numberOfCharasters = text.length
 
 	const handleChange = e => {
 		if (e.target.value.includes('<script>')) {

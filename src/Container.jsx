@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import Stats from './Stats'
 import Textarea from './Textarea'
+import { FACEBOOK_MAX_CHARACTERS, INSTAGRAM_MAX_CHARACTERS } from './constans'
 
 export default function Container() {
 	const [text, setText] = useState('')
@@ -10,8 +11,8 @@ export default function Container() {
 	const stat = {
 		numberOfCharasters: numberOfCharasters,
 		numbeOfWods: text.split(/\s/).filter(word => word !== '').length,
-		instagramCharactersleft: 280 - text.length,
-		facebookCharactersleft: 2200 - text.length,
+		instagramCharactersleft: INSTAGRAM_MAX_CHARACTERS - text.length,
+		facebookCharactersleft: FACEBOOK_MAX_CHARACTERS - text.length,
 	}
 
 	return (

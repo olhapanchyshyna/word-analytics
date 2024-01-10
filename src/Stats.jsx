@@ -3,8 +3,8 @@ export default function Stats({stat}) {
 		<section className='stats'>
 			<Stat number={stat.numberOfCharasters} title='Charasters'/>
 			<Stat number={stat.numbeOfWods} title='Words' />
-			<Stat number={stat.instagramCharactersleft > 0 ? stat.instagramCharactersleft : 0 } title='Instagram' />
-			<Stat number={stat.facebookCharactersleft > 0 ? stat.facebookCharactersleft : 0 } title='Facebook' />
+			<Stat number={stat.instagramCharactersleft} title='Instagram' />
+			<Stat number={stat.facebookCharactersleft} title='Facebook' />
 		</section>
 	)
 }
@@ -12,7 +12,7 @@ export default function Stats({stat}) {
 function Stat({number, title}) {
 	return (
 		<section className='stat'>
-			<span className='stat__number'>{number}</span>
+			<span className={`stat__number ${number < 0 ? 'stat__number--limit' : '' }`}>{number}</span>
 			<h2 className='second-heading'>{title}</h2>
 		</section>
 	)
